@@ -1,53 +1,57 @@
 :root{
-  --bg:#0b0b10;
-  --fg:#f4f1e8;
-  --muted:#b9b4a8;
-  --card:#12121a;
-  --border: rgba(244,241,232,0.14);
-  --shadow: 0 24px 80px rgba(0,0,0,0.55);
-  --radius: 18px;
+  --bg: #090a0f;
+  --card: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.09);
+  --fg: rgba(244,241,232,0.96);
+  --muted: rgba(244,241,232,0.66);
+  --accent: #7ff0ff;
+  --danger: #ff3d71;
+  --radius: 20px;
+  --shadow: 0 18px 55px rgba(0,0,0,0.55);
 }
 
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
   margin:0;
-  background: radial-gradient(1200px 900px at 20% 0%, rgba(118,85,255,0.22), transparent 55%),
-              radial-gradient(900px 700px at 80% 10%, rgba(0,212,255,0.12), transparent 55%),
-              var(--bg);
-  color:var(--fg);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  line-height:1.45;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(127,240,255,0.12), transparent 55%),
+    radial-gradient(900px 500px at 80% 30%, rgba(255,61,113,0.08), transparent 55%),
+    linear-gradient(180deg, #070812, #06070c 40%, #05060a);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
-
-a{ color: inherit; }
 
 .wrap{
   max-width: 980px;
   margin: 0 auto;
-  padding: 28px 18px 64px;
+  padding: 48px 22px 60px;
 }
 
-.header{
+.top{
   display:flex;
-  align-items:flex-start;
   justify-content:space-between;
-  gap:16px;
-  margin-bottom: 18px;
+  align-items:flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-.brand{
-  font-weight:700;
-  letter-spacing:0.02em;
-  font-size: 14px;
+.kicker{
+  letter-spacing: 0.12em;
+  font-weight: 700;
   color: var(--muted);
-  user-select:none;
+  font-size: 14px;
 }
 
-.stepTitle{
-  font-size: 26px;
-  font-weight: 750;
-  margin: 8px 0 4px;
+h1{
+  margin: 10px 0 6px;
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+.subtitle{
+  color: var(--muted);
+  font-size: 18px;
 }
 
 .subtle{
@@ -55,165 +59,168 @@ a{ color: inherit; }
   font-size: 14px;
 }
 
-.card{
-  background: rgba(18,18,26,0.72);
+.kbd{
+  display:inline-block;
+  padding: 2px 8px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  border-radius: 10px;
+  margin: 0 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow:hidden;
-  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+  padding: 18px;
 }
 
 .videoWrap{
-  position:relative;
+  margin-bottom: 14px;
+}
+
+.video{
+  position: relative;
+  width: 100%;
   padding-top: 56.25%;
-  background:#000;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.55);
 }
 
-.videoWrap iframe{
-  position:absolute; inset:0;
-  width:100%; height:100%;
+.videoWrap iframe,
+.videoWrap video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
   border:0;
+  display:block;
 }
 
-.section{
-  padding: 18px 18px 22px;
-  border-top: 1px solid var(--border);
-}
-
-details summary{
-  cursor:pointer;
+.transcript summary{
+  cursor: pointer;
   color: var(--muted);
-  user-select:none;
+  margin: 6px 0 12px;
 }
 
-details[open] summary{
-  margin-bottom: 10px;
-}
-
-.transcript{
+.transcript pre{
   white-space: pre-wrap;
-  color: rgba(244,241,232,0.88);
+  color: rgba(244,241,232,0.82);
   font-size: 14px;
-  padding: 12px 12px;
-  background: rgba(0,0,0,0.20);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  line-height: 1.5;
+  margin: 10px 0 0;
+}
+
+.prompt{
+  padding: 10px 8px 2px;
 }
 
 .question{
   font-size: 18px;
-  font-weight: 650;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
 }
 
 .hint{
-  margin: 0 0 14px;
-  color: var(--muted);
+  margin: 0 0 8px;
+  color: rgba(244,241,232,0.72);
   font-size: 14px;
 }
 
-.writerShell{
+.editorWrap{
+  margin-top: 10px;
+}
+
+textarea{
+  width: 100%;
+  min-height: 240px;
+  resize: vertical;
+  padding: 14px 14px;
+  border-radius: 16px;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  background: rgba(0,0,0,0.20);
-  padding: 12px;
+  background: rgba(0,0,0,0.35);
+  color: var(--fg);
+  font-size: 16px;
+  line-height: 1.6;
+  outline: none;
 }
 
-.modeRow{
+textarea:focus{
+  border-color: rgba(127,240,255,0.45);
+  box-shadow: 0 0 0 4px rgba(127,240,255,0.10);
+}
+
+.btnRow{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.modeRow .left{
-  display:flex; align-items:center; gap: 10px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.toggle{
-  display:inline-flex;
-  gap: 8px;
-  align-items:center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .btn{
-  appearance:none;
-  border:1px solid var(--border);
-  background: rgba(255,255,255,0.06);
+  appearance: none;
+  border: 1px solid rgba(127,240,255,0.35);
+  background: rgba(127,240,255,0.11);
   color: var(--fg);
-  padding: 10px 12px;
-  border-radius: 12px;
-  cursor:pointer;
-  font-weight: 650;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.btn:hover{ background: rgba(255,255,255,0.10); }
-.btn.primary{
-  background: rgba(118,85,255,0.26);
-  border-color: rgba(118,85,255,0.55);
-}
-.btn.primary:hover{ background: rgba(118,85,255,0.32); }
-
-.editor{
-  min-height: 220px;
-  padding: 14px 12px;
-  outline:none;
-  border-radius: 12px;
-  background: rgba(10,10,14,0.62);
-  border: 1px solid rgba(244,241,232,0.10);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 15px;
-  line-height: 1.55;
+.btn:hover{
+  border-color: rgba(127,240,255,0.65);
+  background: rgba(127,240,255,0.16);
 }
 
-.editor:empty:before{
-  content: attr(data-placeholder);
-  color: rgba(185,180,168,0.55);
-}
-
-.canvasWrap{
-  display:none;
-}
-
-canvas{
-  width:100%;
-  height: 280px;
-  background: rgba(10,10,14,0.62);
-  border: 1px solid rgba(244,241,232,0.10);
-  border-radius: 12px;
-  touch-action: none;
-}
-
-.footerRow{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap: 10px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
-
-.small{
+.btn.ghost{
+  border-color: var(--border);
+  background: rgba(255,255,255,0.03);
   color: var(--muted);
+}
+
+.btn.ghost:hover{
+  color: var(--fg);
+  border-color: rgba(244,241,232,0.20);
+}
+
+.status{
+  margin-top: 10px;
+  color: rgba(244,241,232,0.70);
   font-size: 13px;
 }
 
-hr.sep{
-  border:0;
-  border-top:1px solid var(--border);
-  margin: 16px 0;
+.complete h2{
+  margin: 6px 0 6px;
 }
 
-.kbd{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.04);
-  color: rgba(244,241,232,0.92);
+.complete p{
+  color: var(--muted);
+  margin: 0 0 12px;
 }
+
+.artifact{
+  margin-top: 10px;
+  white-space: pre-wrap;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 12px;
+  background: rgba(0,0,0,0.35);
+  min-height: 160px;
+}
+
+.hidden{ display:none; }
+
+.foot{
+  margin-top: 16px;
+  color: rgba(244,241,232,0.55);
+  font-size: 12px;
+}
+
+/* --- New Idealism Experience additions --- */
+.headerRight{ display:flex; flex-direction:column; align-items:flex-end; gap:10px; text-align:right; }
+.menuLink{ color: var(--muted); text-decoration:none; border:1px solid var(--border); padding:8px 10px; border-radius:12px; }
+.menuLink:hover{ color: var(--fg); border-color: rgba(244,241,232,0.25); }
+.context{ margin:0 0 14px; color: var(--fg); opacity:0.88; line-height:1.55; font-size:16px; }
