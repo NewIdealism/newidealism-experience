@@ -1,11 +1,24 @@
 [
   {
     "id": "1",
-    "title": "Wtf?! What is the point? (part 1)",
-    "video_url": "https://www.youtube.com/watch?v=VIDEO_ID_HERE",
-    "transcript": "what is the point of talking about metaphysical idealism...\n(Replace this placeholder transcript with the real transcript or a cleaned excerpt.)\n",
-    "question": "What belief or assumption in your day-to-day life feels 'obvious' - but might actually be inherited dogma?",
-    "prompt_hint": "Write like nobody is grading you. Three minutes. No editing. Let it be messy.",
+    "title": "The Modern Crisis of Meaninglessness",
+    "subtitle": "One video. One question. One honest answer.",
+    "video_url": "https://www.youtube.com/shorts/gpVmCjecvew",
+    "transcript": "",
+    "context": "We keep blaming social media for the surge in anxiety and depression, but that’s the surface story. The deeper problem is a meaning crisis Nietzsche saw coming: as we tore down old certainties in the name of truth, our “highest values” started to collapse, and a quiet nihilism moved in. When life stops feeling meaningful, people don’t just get sad - they get anxious, restless, and mentally exhausted, because there’s no solid “why” holding everything together. Vervaeke’s short nails this in a punchy way: it links today’s mental health strain to a broader collapse of meaning and orientation, and that’s the real root issue we have to push through.",
+    "question": "Rates of depression and anxiety have increased in the past century. What do you think is causing that?",
+    "prompt_hint": "Write like you’re texting someone smart who actually cares. 6-10 sentences is plenty.",
+    "next": "2"
+  },
+  {
+    "id": "2",
+    "title": "Second Door (placeholder)",
+    "subtitle": "This is where Step 2 will go.",
+    "video_url": "",
+    "transcript": "",
+    "context": "Step 2 is not built yet. For now, write one sentence that begins: “If life is not meaningless, then…”",
+    "question": "Complete that sentence. Don’t overthink it.",
+    "prompt_hint": "One sentence is enough. Keep it blunt.",
     "next": "complete"
   }
 ]
