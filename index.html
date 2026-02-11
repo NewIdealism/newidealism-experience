@@ -1,89 +1,75 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>New Idealism - Journey</title>
-  <link rel="stylesheet" href="./styles.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>New Idealism Experience</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="wrap">
-    <div class="header">
+
+    <header class="top">
       <div>
-        <div class="brand">NEW IDEALISM</div>
-        <div class="stepTitle" id="title">Loading...</div>
-        <div class="subtle" id="subtitle"></div>
+        <div class="kicker" id="kicker">NEW IDEALISM</div>
+        <h1 id="title">Wtf?! What is the point? (part 1)</h1>
+        <div class="subtitle" id="subtitle">One question. One honest answer. Then move forward.</div>
       </div>
-      <div class="subtle">
+      <div class="subtle headerRight">
         <div>Tip: <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span> to continue</div>
+        <a class="menuLink" id="menuLink" href="#" rel="nofollow">Exit to menu</a>
       </div>
-    </div>
+    </header>
 
-    <div id="mainStep" class="card">
-      <div class="videoWrap">
-        <iframe id="videoFrame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <section class="card">
+      <div class="videoWrap" id="videoWrap">
+        <div class="video">
+          <iframe id="videoFrame" src="" title="Video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <video id="videoFile" playsinline controls></video>
+        </div>
       </div>
 
-      <div class="section">
-        <details>
-          <summary>Transcript</summary>
-          <div class="transcript" id="transcriptText"></div>
-        </details>
-      </div>
+      <details class="transcript">
+        <summary>Transcript</summary>
+        <pre id="transcriptText"></pre>
+      </details>
 
-      <div class="section">
+      <div class="prompt">
+        <p class="context" id="context"></p>
         <p class="question" id="question"></p>
         <p class="hint" id="hint"></p>
-
-        <div class="writerShell">
-          <div class="modeRow">
-            <div class="left">
-              <span id="saved">Autosave is on (local only).</span>
-            </div>
-            <div class="toggle">
-              <button class="btn" id="clearInkBtn" style="display:none;">Clear ink</button>
-              <button class="btn" id="modeBtn">Switch to ink</button>
-            </div>
-          </div>
-
-          <div id="editor" class="editor" contenteditable="true" spellcheck="true"
-               data-placeholder="Start typing..."></div>
-
-          <div id="canvasWrap" class="canvasWrap">
-            <canvas id="inkCanvas"></canvas>
-            <div class="small" style="margin-top:10px;">Ink is saved locally as well. Use a stylus if you have one.</div>
-          </div>
-
-          <div class="footerRow">
-            <div class="small">This is not a test. This is a tuning fork.</div>
-            <button class="btn primary" id="nextBtn">Next</button>
-          </div>
-        </div>
       </div>
-    </div>
 
-    <div id="complete" class="card" style="display:none;">
-      <div class="section">
-        <div class="stepTitle" style="margin:0;">Your Idealism Ledger</div>
-        <p class="subtle" style="margin-top:6px;">Download it, copy it, or restart and do it cleaner. Or dirtier. Both work.</p>
-        <hr class="sep"/>
-        <pre class="transcript" id="artifact" style="max-height: 420px; overflow:auto;"></pre>
-        <div class="footerRow" style="margin-top:14px;">
-          <div class="small" id="copyStatus"></div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn" id="copyBtn">Copy</button>
-            <button class="btn" id="downloadBtn">Download .txt</button>
-            <button class="btn" id="restartBtn">Restart</button>
-          </div>
-        </div>
+      <div class="editorWrap">
+        <textarea id="answer" placeholder="Type here..."></textarea>
       </div>
-    </div>
 
-    <div class="subtle" style="margin-top:16px;">
-      <div>Privacy note: responses are stored in your browser only (localStorage). No accounts, no server, no tracking by default.</div>
-    </div>
+      <div class="btnRow">
+        <button class="btn ghost" id="saveBtn" type="button">Save</button>
+        <button class="btn" id="nextBtn" type="button">Next</button>
+      </div>
+
+      <div class="status" id="status"></div>
+    </section>
+
+    <section class="card complete hidden" id="completeCard">
+      <h2>Your Idealism Teaching Profile (draft)</h2>
+      <p>This is the raw material you created. Download it, keep it, and paste it into ChatGPT later if you want an analysis.</p>
+      <div class="btnRow">
+        <button class="btn" id="downloadBtn" type="button">Download</button>
+        <a class="btn ghost" id="restartLink" href="?step=1">Restart</a>
+      </div>
+      <pre class="artifact" id="artifactText"></pre>
+    </section>
+
+    <footer class="foot">
+      <span id="footNote">Saved locally in your browser (no account required).</span>
+    </footer>
+
   </div>
 
-  <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
