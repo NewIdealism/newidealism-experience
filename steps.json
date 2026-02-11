@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1",
+    "title": "Wtf?! What is the point? (part 1)",
+    "video_url": "https://www.youtube.com/watch?v=VIDEO_ID_HERE",
+    "transcript": "what is the point of talking about metaphysical idealism...\n(Replace this placeholder transcript with the real transcript or a cleaned excerpt.)\n",
+    "question": "What belief or assumption in your day-to-day life feels 'obvious' - but might actually be inherited dogma?",
+    "prompt_hint": "Write like nobody is grading you. Three minutes. No editing. Let it be messy.",
+    "next": "complete"
+  }
+]

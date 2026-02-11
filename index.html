@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>New Idealism - Journey</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <div class="brand">NEW IDEALISM</div>
+        <div class="stepTitle" id="title">Loading...</div>
+        <div class="subtle" id="subtitle"></div>
+      </div>
+      <div class="subtle">
+        <div>Tip: <span class="kbd">Ctrl</span> + <span class="kbd">Enter</span> to continue</div>
+      </div>
+    </div>
+
+    <div id="mainStep" class="card">
+      <div class="videoWrap">
+        <iframe id="videoFrame" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div class="section">
+        <details>
+          <summary>Transcript</summary>
+          <div class="transcript" id="transcriptText"></div>
+        </details>
+      </div>
+
+      <div class="section">
+        <p class="question" id="question"></p>
+        <p class="hint" id="hint"></p>
+
+        <div class="writerShell">
+          <div class="modeRow">
+            <div class="left">
+              <span id="saved">Autosave is on (local only).</span>
+            </div>
+            <div class="toggle">
+              <button class="btn" id="clearInkBtn" style="display:none;">Clear ink</button>
+              <button class="btn" id="modeBtn">Switch to ink</button>
+            </div>
+          </div>
+
+          <div id="editor" class="editor" contenteditable="true" spellcheck="true"
+               data-placeholder="Start typing..."></div>
+
+          <div id="canvasWrap" class="canvasWrap">
+            <canvas id="inkCanvas"></canvas>
+            <div class="small" style="margin-top:10px;">Ink is saved locally as well. Use a stylus if you have one.</div>
+          </div>
+
+          <div class="footerRow">
+            <div class="small">This is not a test. This is a tuning fork.</div>
+            <button class="btn primary" id="nextBtn">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="complete" class="card" style="display:none;">
+      <div class="section">
+        <div class="stepTitle" style="margin:0;">Your Idealism Ledger</div>
+        <p class="subtle" style="margin-top:6px;">Download it, copy it, or restart and do it cleaner. Or dirtier. Both work.</p>
+        <hr class="sep"/>
+        <pre class="transcript" id="artifact" style="max-height: 420px; overflow:auto;"></pre>
+        <div class="footerRow" style="margin-top:14px;">
+          <div class="small" id="copyStatus"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn" id="copyBtn">Copy</button>
+            <button class="btn" id="downloadBtn">Download .txt</button>
+            <button class="btn" id="restartBtn">Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtle" style="margin-top:16px;">
+      <div>Privacy note: responses are stored in your browser only (localStorage). No accounts, no server, no tracking by default.</div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
